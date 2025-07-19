@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="mb-4 text-center text-primary">Choose a News Category</h2>
+<div class="row justify-content-center">
+  {% for category in categories %}
+    <div class="col-6 col-md-3 mb-4">
+      <a href="{{ url_for('show_news', category=category) }}" class="btn btn-outline-success w-100 py-3">
+        {{ category.title() }}
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

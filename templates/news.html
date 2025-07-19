@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2 class="text-center text-info">{{ category.title() }} News</h2>
+<div class="row mt-4">
+  {% for article in articles %}
+  <div class="col-md-6 mb-4">
+    <div class="card shadow rounded-4">
+      <div class="card-body">
+        <h5 class="card-title text-primary">{{ article.title }}</h5>
+        <p class="card-text">{{ article.summary }}</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<a href="/" class="btn btn-secondary mt-4">← Back to Categories</a>
+{% endblock %}
